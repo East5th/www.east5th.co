@@ -81,10 +81,20 @@ body {
     margin-left: 2em;
   }
 
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   body > header {
-    background-image: url("./public/vectorized.jpg");
+    background-image: url("./public/vectorized.png");
     background-size: cover;
     background-position: 0 100%;
+    animation: fadein 4s;
 
     height: 100vh;
     position: relative;
