@@ -87,7 +87,7 @@ body {
     background-image: url("./public/vectorized.png");
     background-size: cover;
     background-position: 0 100%;
-    animation: fadein 5s;
+    animation: fadein 6s;
 
     height: 100vh;
     position: relative;
