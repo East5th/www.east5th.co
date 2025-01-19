@@ -72,7 +72,7 @@ body {
     width: 50%;
     margin: 0 auto 6em;
     fill: #333;
-    animation: fadein 6s;
+    animation: fadein 8s;
   }
 
   .profile-logo {
@@ -95,7 +95,7 @@ body {
     background-image: url("./public/vectorized.png");
     background-size: cover;
     background-position: 0 100%;
-    animation: fadein 6s;
+    animation: fadein 4s;
 
     height: 100vh;
     position: relative;
