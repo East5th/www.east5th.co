@@ -82,7 +82,7 @@ body {
   }
 
   body > header {
-    background-image: url("./public/vectorized.png");
+    background-image: url("./public/vectorized.jpg");
     background-size: cover;
     background-position: 0 100%;
 
