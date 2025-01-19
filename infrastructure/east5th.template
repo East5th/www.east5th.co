@@ -142,6 +142,7 @@
                   "Action": [
                     "codestar-connections:*",
                     "iam:PassRole",
+                    "logs:*",
                     "s3:*",
                     "ssm:*"
                   ],
