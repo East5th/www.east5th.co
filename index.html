@@ -6,6 +6,13 @@
     <meta name="robots" content="index,follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>East5th</title>
+    <style>
+      body > header {
+        background-image: url("./public/vectorized.jpg");
+        background-size: cover;
+        background-position: 0 100%;
+      }
+    </style>
     <link
       rel="preload"
       href="./public/east5th.svg"
@@ -30,15 +37,7 @@
   </head>
   <body>
     <header>
-      <img
-        class="logo"
-        src="./public/east5th.svg"
-        style="
-          background-image: url('./public/vectorized.jpg');
-          background-size: cover;
-          background-position: 0 100%;
-        "
-      />
+      <img class="logo" src="./public/east5th.svg" />
       <a href="#info"><div class="arrow"></div></a>
     </header>
     <div class="anchor-y" id="info"></div>
