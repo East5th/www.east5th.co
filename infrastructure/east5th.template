@@ -45,6 +45,65 @@
         }
       }
     },
+    "hostedZone": {
+      "Type": "AWS::Route53::HostedZone",
+      "Properties": {
+        "Name": "east5th.co"
+      }
+    },
+    "certificate": {
+      "Type": "AWS::CertificateManager::Certificate",
+      "Properties": {
+        "DomainName": "east5th.co",
+        "ValidationMethod": "DNS",
+        "DomainValidationOptions": [
+          {
+            "DomainName": "east5th.co",
+            "HostedZoneId": {
+              "Ref": "hostedZone"
+            }
+          }
+        ]
+      }
+    },
+    "cloudfrontDistribution": {
+      "Type": "AWS::CloudFront::Distribution",
+      "Properties": {
+        "DistributionConfig": {
+          "Aliases": [
+            "east5th.co"
+          ],
+          "DefaultCacheBehavior": {
+            "CachePolicyId": "4135ea2d-6df8-44a3-9df3-4b5a84be39ad",
+            "TargetOriginId": {
+              "Fn::Sub": "${s3Bucket}.s3-website.${AWS::Region}.amazonaws.com"
+            },
+            "ViewerProtocolPolicy": "redirect-to-https"
+          },
+          "Enabled": true,
+          "Origins": [
+            {
+              "CustomOriginConfig": {
+                "OriginProtocolPolicy": "http-only"
+              },
+              "DomainName": {
+                "Fn::Sub": "${s3Bucket}.s3-website.${AWS::Region}.amazonaws.com"
+              },
+              "Id": {
+                "Fn::Sub": "${s3Bucket}.s3-website.${AWS::Region}.amazonaws.com"
+              }
+            }
+          ],
+          "ViewerCertificate": {
+            "AcmCertificateArn": {
+              "Ref": "certificate"
+            },
+            "MinimumProtocolVersion": "TLSv1.2_2021",
+            "SslSupportMethod": "sni-only"
+          }
+        }
+      }
+    },
     "githubConnection": {
       "Type": "AWS::CodeStarConnections::Connection",
       "Properties": {
