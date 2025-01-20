@@ -104,6 +104,44 @@
         }
       }
     },
+    "recordSet": {
+      "Type": "AWS::Route53::RecordSet",
+      "Properties": {
+        "Name": "east5th.co",
+        "Type": "A",
+        "AliasTarget": {
+          "DNSName": {
+            "Fn::GetAtt": [
+              "cloudfrontDistribution",
+              "DomainName"
+            ]
+          },
+          "HostedZoneId": "Z2FDTNDATAQYW2"
+        },
+        "HostedZoneId": {
+          "Ref": "hostedZone"
+        }
+      }
+    },
+    "recordSetIpv6": {
+      "Type": "AWS::Route53::RecordSet",
+      "Properties": {
+        "Name": "east5th.co",
+        "Type": "AAAA",
+        "AliasTarget": {
+          "DNSName": {
+            "Fn::GetAtt": [
+              "cloudfrontDistribution",
+              "DomainName"
+            ]
+          },
+          "HostedZoneId": "Z2FDTNDATAQYW2"
+        },
+        "HostedZoneId": {
+          "Ref": "hostedZone"
+        }
+      }
+    },
     "githubConnection": {
       "Type": "AWS::CodeStarConnections::Connection",
       "Properties": {
