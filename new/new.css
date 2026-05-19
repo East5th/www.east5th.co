@@ -70,6 +70,7 @@ strong {
   width: 4em;
   height: 4em;
   border-radius: 100%;
+  filter: brightness(0) saturate(100%) invert(44%) sepia(100%) saturate(2618%) hue-rotate(201deg) brightness(103%) contrast(101%);
 }
 
 @keyframes fadein {
@@ -136,6 +137,7 @@ a {
   justify-content: center;
   margin-top: 4em;
   margin-bottom: 4em;
+  min-height: 50vh;
 }
 
 .content-invert {
@@ -145,6 +147,7 @@ a {
   justify-content: center;
   margin-top: 4em;
   margin-bottom: 4em;
+  min-height: 50vh;
 }
 
 .anchor-y {
@@ -160,6 +163,7 @@ a {
   max-width: none;
   padding-top: 4em;
   padding-bottom: 4em;
+  min-height: 50vh;
 }
 
 .invert {
@@ -192,9 +196,15 @@ a {
 }
 
 .title {
+  display: flex;
   font-weight: bold;
   font-style: italic;
   font-size: 1.1em;
+}
+
+.links {
+  flex: 1;
+  text-align: right;
 }
 
 .button-invert {
@@ -238,7 +248,7 @@ a {
   display: flex;
   flex-direction: column;
   padding: 1em;
-  border: 1px solid #dfdfdf;
+  box-shadow: 0 0 0.5em #d0e0f9;
   border-radius: 0.25em;
 }
 
@@ -251,34 +261,6 @@ a {
   align-items: center;
   justify-content: center;
   margin: 1em 0;
-}
-
-@media (max-width: 800px) {
-  body {
-    font-size: 20px;
-  }
-
-  .full-width .card {
-    flex-direction: column;
-  }
-
-  .content .card {
-    flex-direction: column-reverse;
-  }
-
-  .title {
-    text-align: center;
-  }
-
-  .profile {
-    margin-right: 0;
-    margin-bottom: 1em;
-  }
-
-  .profile-logo {
-    margin-left: 0;
-    margin-bottom: 1em;
-  }
 }
 
 .stack-wrapper {
@@ -332,5 +314,79 @@ a {
   h1 {
     text-align: left;
     margin-bottom: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  body {
+    font-size: 20px;
+  }
+
+  .full-width .card {
+    flex-direction: column;
+  }
+
+  .content .card {
+    flex-direction: column-reverse;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .profile {
+    margin-right: 0;
+    margin-bottom: 1em;
+  }
+
+  .profile-logo {
+    margin-left: 0;
+    margin-bottom: 1em;
+    filter: brightness(0) saturate(100%) invert(44%) sepia(100%) saturate(2618%) hue-rotate(201deg) brightness(103%) contrast(101%);
+  }
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .button {
+    margin-top: 1em;
+  }
+
+  .stack-wrapper {
+    grid-template-columns: 100%;
+
+    & > div:nth-child(2) {
+      padding-left: 0;
+    }
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .stack {
+    grid-row-gap: 2em;
+  }
+
+  .clients-wrapper {
+    grid-template-columns: 100%;
+
+    & > div:nth-child(1) {
+      padding-right: 0;
+    }
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .title {
+    flex-direction: column;
+  }
+
+  .links {
+    text-align: center;
+    margin-bottom: 1em;
   }
 }
