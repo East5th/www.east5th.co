@@ -205,6 +205,14 @@ a {
 .links {
   flex: 1;
   text-align: right;
+
+  & > a {
+    margin-right: 0.25em;
+  }
+
+  & > a:nth-last-child(1) {
+    margin-right: 0;
+  }
 }
 
 .button-invert {
@@ -234,22 +242,49 @@ a {
   margin-top: 3em;
 }
 
-.wrapper {
-  display: flex;
-}
-
 .services {
   display: flex;
   margin-bottom: 1em;
-  flex-direction: column;
+
+  & > .service {
+    margin-right: 1em;
+  }
+
+  & > .service:nth-last-child(1) {
+    margin-right: 0;
+  }
 }
 
 .service {
   display: flex;
   flex-direction: column;
+  flex: 1;
   padding: 1em;
   box-shadow: 0 0 0.5em #d0e0f9;
   border-radius: 0.25em;
+
+  & > h2 {
+    margin-bottom: 0;
+  }
+
+  & > p {
+    font-size: 0.9em;
+  }
+
+  & > a {
+    font-size: 0.9em;
+  }
+
+  & > div {
+    margin-top: 3em; 
+    font-weight: bold;
+    font-size: 0.9em;
+  }
+
+  & > ul {
+    font-size: 0.9em;
+    line-height: 1.6;
+  }
 }
 
 .more-info {
@@ -345,10 +380,6 @@ a {
     filter: brightness(0) saturate(100%) invert(44%) sepia(100%) saturate(2618%) hue-rotate(201deg) brightness(103%) contrast(101%);
   }
 
-  .wrapper {
-    flex-direction: column;
-  }
-
   .button {
     margin-top: 1em;
   }
@@ -388,5 +419,18 @@ a {
   .links {
     text-align: center;
     margin-bottom: 1em;
+  }
+
+  .services {
+    flex-direction: column;
+
+    & > .service {
+      margin-right: 0;
+      margin-bottom: 1em;
+    }
+
+    & > .service:nth-last-child(1) {
+      margin-bottom: 0;
+    }
   }
 }
