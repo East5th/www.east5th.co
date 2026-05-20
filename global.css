@@ -82,7 +82,7 @@ strong {
 }
 
 body > header {
-  background-image: url("../public/vectorized.png");
+  background-image: url("./public/vectorized.png");
   background-size: cover;
   background-position: 0 100%;
   animation: fadein 6s;
