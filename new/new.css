@@ -31,7 +31,6 @@ h2 {
 }
 
 h1 {
-  text-align: center;
   font-size: 2em;
 }
 
@@ -232,6 +231,8 @@ a {
   padding: 0.5em 2em;
   border-radius: 0.25em;
   width: fit-content;
+  margin-top: 1em;
+  margin-bottom: 2em;
 }
 
 .button:hover {
@@ -245,13 +246,15 @@ a {
 .services {
   display: flex;
   margin-bottom: 1em;
+  margin-top: 2.5em;
 
-  & > .service {
-    margin-right: 1em;
+  & > .service:nth-child(1) {
+    border-right: 1px solid #ebf3ff;
+    padding-right: 2em;
   }
 
-  & > .service:nth-last-child(1) {
-    margin-right: 0;
+  & > .service:nth-child(2) {
+    padding-left: 2em;
   }
 }
 
@@ -259,12 +262,11 @@ a {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 1em;
-  box-shadow: 0 0 0.5em #d0e0f9;
-  border-radius: 0.25em;
 
   & > h2 {
+    font-size: 1.25em;
     margin-bottom: 0;
+    margin-top: 0;
   }
 
   & > p {
@@ -275,8 +277,7 @@ a {
     font-size: 0.9em;
   }
 
-  & > div {
-    margin-top: 3em; 
+  & > .includes-header {
     font-weight: bold;
     font-size: 0.9em;
   }
@@ -284,6 +285,19 @@ a {
   & > ul {
     font-size: 0.9em;
     line-height: 1.6;
+  }
+}
+
+.includes {
+  display: flex;
+  font-weight: normal;
+  font-size: 0.9em;
+  align-items: center;
+  margin-top: 0.5em;
+
+  & > i {
+    color: #3489ff;
+    margin-right: 0.5em;
   }
 }
 
@@ -380,10 +394,6 @@ a {
     filter: brightness(0) saturate(100%) invert(44%) sepia(100%) saturate(2618%) hue-rotate(201deg) brightness(103%) contrast(101%);
   }
 
-  .button {
-    margin-top: 1em;
-  }
-
   .stack-wrapper {
     grid-template-columns: 100%;
 
@@ -424,13 +434,20 @@ a {
   .services {
     flex-direction: column;
 
-    & > .service {
-      margin-right: 0;
-      margin-bottom: 1em;
-    }
-
     & > .service:nth-last-child(1) {
       margin-bottom: 0;
+    }
+
+    & > .service:nth-child(1) {
+      border-right: none;
+      padding-right: 0;
+      border-bottom: 1px solid #ebf3ff;
+      padding-bottom: 2em;
+    }
+
+    & > .service:nth-child(2) {
+      padding-left: 0;
+      padding-top: 2em;
     }
   }
 }
