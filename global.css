@@ -371,6 +371,18 @@ a {
     font-size: 20px;
   }
 
+  h1.invert {
+    text-align: center;
+  }
+
+  .contact h1 {
+    text-align: center;
+  }
+
+  .content h1 {
+    text-align: center;
+  }
+
   .full-width .card {
     flex-direction: column;
   }
@@ -399,6 +411,7 @@ a {
 
     & > div:nth-child(2) {
       padding-left: 0;
+      order: -1;
     }
 
     h1 {
@@ -408,10 +421,15 @@ a {
 
   .stack {
     grid-row-gap: 2em;
+    margin-top: 2em;
   }
 
   .clients-wrapper {
     grid-template-columns: 100%;
+
+    & > div {
+      margin-top: 2em;
+    }
 
     & > div:nth-child(1) {
       padding-right: 0;
