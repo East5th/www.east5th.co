@@ -364,8 +364,7 @@
                     "Files": [
                       "public/**",
                       "index.html",
-                      "global.css",
-                      "new/**"
+                      "global.css"
                     ]
                   }
                 ]
